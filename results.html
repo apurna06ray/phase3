@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Result</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>🎉 Quiz Completed</h1>
+    <p id="result"></p>
+    <button onclick="restartQuiz()">Restart Quiz</button>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const score = params.get("score");
+    const total = params.get("total");
+
+    document.getElementById("result").textContent =
+      `You scored ${score} out of ${total}`;
+
+    function restartQuiz() {
+      window.location.href = "index.html";
+    }
+  </script>
+
+</body>
+</html>
